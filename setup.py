@@ -3,45 +3,34 @@ import os
 from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(here, 'README.txt')) as f:
-    README = f.read()
-with open(os.path.join(here, 'CHANGES.txt')) as f:
-    CHANGES = f.read()
+README = open(os.path.join(here, 'README.txt')).read()
+CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
 
-requires = [
-    'pyramid',
-    'pyramid_chameleon',
-    'pyramid_debugtoolbar',
-    'pyramid_tm',
-    'SQLAlchemy',
-    'transaction',
-    'zope.sqlalchemy',
-    'waitress',
-    ]
+requires=['pyramid>=1.4', 'pyramid_jinja2', 'jinja2','sqlalchemy','waitress','pyramid_tm','pyramid_debugtoolbar','zope.sqlalchemy', 'mysql-python']
 
 setup(name='Alakazam',
       version='0.0',
       description='Alakazam',
-      long_description=README + '\n\n' + CHANGES,
+      long_description=README + '\n\n' +  CHANGES,
       classifiers=[
         "Programming Language :: Python",
-        "Framework :: Pyramid",
+        "Framework :: Pylons",
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
         ],
       author='',
       author_email='',
       url='',
-      keywords='web wsgi bfg pylons pyramid',
+      keywords='web pyramid pylons',
       packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
-      test_suite='alakazam',
       install_requires=requires,
-      entry_points="""\
+      tests_require=requires,
+      test_suite="alakazam",
+      entry_points = """\
       [paste.app_factory]
       main = alakazam:main
-      [console_scripts]
-      initialize_Alakazam_db = alakazam.scripts.initializedb:main
       """,
+      paster_plugins=['pyramid'],
       )
