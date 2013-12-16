@@ -3,6 +3,7 @@ MANIFEST.in
 README.txt
 development.ini
 message-extraction.ini
+production.ini
 requirements.txt
 setup.cfg
 setup.py
