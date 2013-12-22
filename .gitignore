@@ -1,0 +1,7 @@
+*.egg
+*.egg-info
+*.pyc
+*.pyo
+*.swp
+*.db
+Alakazam.egg-info/
