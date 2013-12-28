@@ -1,0 +1,54 @@
+{% extends "_layout.jinja2" %}
+{% block title %}ResumeX Registration{% endblock %}
+{% block content %}
+    {% include 'nav.jinja2' %}
+    <div class="jumbotron">
+        <h1>Create Your ResumeX Profile</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="container">
+        <form class="form-horizontal" role="form">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <input autofocus="autofocus" type="text" class="form-control input-lg" id="register_name" placeholder="Full Name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control input-lg" id="register_email" placeholder="Email Address">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control input-lg" id="register_password" placeholder="Password">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control input-lg" id="register_location" placeholder="Chicago, IL">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding: 10px 125px 10px 0px;">
+                <div class="col-lg-12">
+                    <button class="btn btn-success btn-lg btn-block" type="button">Create Account</button>
+                </div>
+            </div>
+        </form>
+    </div> <!-- End Container -->
+{% endblock %}
