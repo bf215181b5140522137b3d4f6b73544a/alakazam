@@ -1,0 +1,70 @@
+/* Something
+ *
+ * Utilitze the following CSS to disable the responsive-ness of the container,
+ * grid system, and navbar.
+ */
+
+/* The html and body elements cannot have any padding or margin. */
+html,
+body {
+    height: 100%;
+    background: cream-dust;
+}
+
+p, div {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', Georgia, Times, serif;
+}
+
+.cream-dust {
+    background: url(../images/cream_dust.png) repeat 0 0;
+}
+
+.main-image-outline {
+    border: 2px solid white;
+}
+
+.jumbotron {
+    color: cream-dust;
+    text-align: center;
+    background-color: transparent;
+}
+
+.navbar-static-top {
+    margin-bottom: 0px;
+    background-color: transparent;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto;
+    /* Negative indent footer by its height */
+    margin: 0 auto -60px;
+    /* Pad bottom by footer height */
+    padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+    height: 60px;
+    padding-top: 100px;
+}
+
+.footer-copyright {
+    font-weight:100;
+}
+
+.container .text-muted {
+    margin: 5px 20px 0px 0px;
+}
+
+.blue {
+    color: blue;
+}

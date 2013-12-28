@@ -25,6 +25,6 @@ def main(global_config, **settings):
     
     config.add_route("my_route",'/')
     config.add_view('alakazam.views.my_view',
-                    route_name="my_route",renderer="mytemplate.jinja2")
+                    route_name="my_route",renderer="index.jinja2")
     
     return config.make_wsgi_app()

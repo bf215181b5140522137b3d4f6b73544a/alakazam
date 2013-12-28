@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+        <title>{% block title %}{% endblock %}</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{{request.application_url}}/static/css/bootstrap.css"/>
+        <link rel="stylesheet" href="{{request.application_url}}/static/css/alakazam.css"/>
+        <!-- Google Fonts -->
+        <link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+        <!--[if !IE 7]>
+        <style type="text/css">
+            #wrap {display:table;height:100%}
+        </style>
+        <![endif]-->
+        <!-- Page-specific Stylings -->
+        {% endblock %}
+        <style type="text/css"></style>
+    </head>
+    <body>
+        <div id="wrap">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="footer">
+            <div class="container">
+                <hr />
+                <ul class="list-inline">
+                    <li><button type="button" class="btn btn-link">Home</button></li>
+                    <li><button type="button" class="btn btn-link">Top Rocket</button></li>
+                    <li><button type="button" class="btn btn-link">Terms of Service</button></li>
+                    <li><button type="button" class="btn btn-link">Privacy</button></li>
+                    <li><button type="button" class="btn btn-link">Careers</button></li>
+                    <li><button type="button" class="btn btn-link">Help</button></li>
+                </ul>
+            </div>
+            <div class="container footer-copyright">
+                <p>&nbsp;&nbsp;&nbsp;&copy; 2013 Resume Beyond, Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <!-- Include all compiled plugins (below) -->
+        <script src="{{request.application_url}}/static/js/bootstrap.min.js"></script>
+        <script src="{{request.application_url}}/static/js/alakazam.js"></script>
+    </body>
+</html>

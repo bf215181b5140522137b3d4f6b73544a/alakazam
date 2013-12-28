@@ -1,0 +1,131 @@
+{% extends "_layout.jinja2" %}
+{% block title %}Beyond your resume and into your World{% endblock %}
+{% block content %}
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <p style="text-align: center">ResumeX is in a very-early BETA stage. Some features and functionality may be missing or broken.</p>
+    </div>
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="{{request.application_url}}/static/images/logo.png"></a>
+                <a class="navbar-brand" href="#">ResumeX</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#employers">For Employers</a></li>
+                    <li class="#about"><a href="#">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <form class="navbar-form navbar-right" role="form">
+                            <a data-toggle="modal" href="#login" class="btn btn-primary">Sign In</a>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Sign In Modal -->
+    <div class="modal fade" id="login" role="dialog">
+        <div class="modal-dialog cream-dust">
+            <div class="modal-content">
+                <form role="form">
+                    <div class="modal-header">
+                        <a class="close" data-dismiss="modal">&times;</a>
+                        <h3>Sign In to ResumeX</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control input-lg" id="email" placeholder="example@site.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="passw0rd">Password</label>
+                            <input type="password" class="form-control input-lg" id="passw0rd" placeholder="Password">
+                            <br />
+                            <a href="#">Forgot your password?</a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-block">Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Create New Account Modal -->
+    <div class="modal fade" id="register" role="dialog">
+        <div class="modal-dialog cream-dust">
+            <div class="modal-content">
+                <form role="form">
+                    <div class="modal-header">
+                        <a href="/register" class="close" data-dismiss="modal">&times;</a>
+                        <h3>Create a new account</h3>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Main Image -->
+    <div id="mainCarousel" class="carousel main-image-outline">
+        <div class="carousel-inner">
+            <div class="item active">
+                <img class="img-responsive img-rounded" src="{{request.application_url}}/static/images/0.jpg">
+                <div class="carousel-caption jumbotron">
+                    <h1>Lorem Ipsum</h1>
+                    <a data-toggle="modal" href="#register" class="btn btn-lg btn-success">Create an account</a>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control left" href="#mainCarousel" data-slide="prev"></a>
+        <a class="carousel-control right" href="#mainCarousel" data-slide="next"></a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Showcase <strong>all</strong> your skillz to employers</h2>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                <a class="btn btn-default" href="#" role="button">More details &raquo;</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="jumbotron" style="color:#202020;">
+                    <h2>Excepteur <strong>sint</strong> occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Leverage your web <strong>accomplishments</strong></h2>
+                <img class="img-responsive" src="https://dmrxx81gnj0ct.cloudfront.net/assets/marketing/employer-grid-monochrome-609de9f1a5e4b9fbdce88e0e5c0b7bc4.png">
+            </div>
+        </div>
+    </div>
+    <br /></br />
+    <br /></br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>See a <strong>Science</strong> profile in action</h3>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                <a class="btn btn-default" href="#" role="button">Scientists &raquo;</a>
+            </div>
+            <div class="col-md-6">
+                <h3>Check out a <strong>Technology</strong> profile</h3>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                <a class="btn btn-default" href="#" role="button">Technologists &raquo;</a>
+            </div>
+        </div>
+    </div> 
+{% endblock %}
