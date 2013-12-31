@@ -1,7 +1,6 @@
 from pyramid.view import view_config
 from pyramid.i18n import TranslationStringFactory
-from alakazam.models import DBSession
-
+from alakazam.models import DBSession, User
 
 _ = TranslationStringFactory('Alakazam')
 

@@ -6,7 +6,16 @@ here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.txt')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
 
-requires=['pyramid>=1.4', 'pyramid_jinja2', 'jinja2','sqlalchemy','waitress','pyramid_tm','pyramid_debugtoolbar','zope.sqlalchemy', 'mysql-python']
+requires=['pyramid>=1.4',
+          'pyramid_jinja2',
+          'jinja2',
+          'sqlalchemy',
+          'waitress',
+          'pyramid_tm',
+          'pyramid_debugtoolbar',
+          'zope.sqlalchemy',
+          'transaction',
+          'psycopyg2']
 
 setup(name='Alakazam',
       version='0.0',
@@ -31,6 +40,8 @@ setup(name='Alakazam',
       entry_points = """\
       [paste.app_factory]
       main = alakazam:main
+      [console_scripts]
+      initialize_Alakazam_db = alakazam.scripts.initialize_db:main
       """,
       paster_plugins=['pyramid'],
       )

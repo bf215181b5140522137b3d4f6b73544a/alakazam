@@ -1,7 +1,9 @@
+# Std lib
+import os
+
 # 3rd party
 from pyramid.config import Configurator
 from pyramid_jinja2 import renderer_factory
-from sqlalchemy import engine_from_config
 
 # Local
 from alakazam.models import initialize_sql
@@ -17,6 +19,17 @@ def add_routes(config):
     config.add_route('login', '/login')
     config.add_route('register', '/register')
 
+def heroku_engine(settings):
+    """
+    Docstring goes here
+
+    :param settings: blah blah
+    :returns: blah blah
+
+    """
+    # Connection string info will be in environment var in heroku
+    return create_engine(os.environ['DATABASE_URL'])  
+
 def main(global_config, **settings):
     """
     This function returns a WSGI application.
@@ -25,9 +38,13 @@ def main(global_config, **settings):
     ``paster serve`` or ``pserve``.
 
     """
-    #SQLAlchemy engine config for main DB 
-    #Any setting that begins with 'sqlalchemy.' will be picked up
-    db_engine = engine_from_config(settings,'sqlalchemy.')
+    #SQLAlchemy engine config for main DB depending on environ
+    if settings.get('heroku') == 'true':
+        from sqlalchemy import create_engine
+        db_engine = heroku_engine(settings)
+    else:
+        from sqlalchemy import engine_from_config
+        db_engine = engine_from_config(settings, 'sqlalchemy.')
     #Binding engine to the model
     initialize_sql(db_engine)
     config = Configurator(settings=settings)
