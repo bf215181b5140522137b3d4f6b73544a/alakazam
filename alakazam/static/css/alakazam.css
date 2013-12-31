@@ -8,7 +8,7 @@
 html,
 body {
     height: 100%;
-    background: cream-dust;
+    background: url(../images/grey.png) repeat 0 0;
 }
 
 p, div {
@@ -19,8 +19,12 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Ubuntu', Georgia, Times, serif;
 }
 
-.cream-dust {
-    background: url(../images/cream_dust.png) repeat 0 0;
+.greyish {
+    background: url(../images/grey.png) repeat 0 0;
+}
+
+.creamy {
+    background: url(../images/cream.png) repeat 0 0;
 }
 
 .main-image-outline {
