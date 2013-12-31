@@ -15,7 +15,7 @@ requires=['pyramid>=1.4',
           'pyramid_debugtoolbar',
           'zope.sqlalchemy',
           'transaction',
-          'psycopyg2']
+          'psycopg2']
 
 setup(name='Alakazam',
       version='0.0',
