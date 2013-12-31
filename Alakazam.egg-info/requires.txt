@@ -1,0 +1,10 @@
+pyramid>=1.4
+pyramid_jinja2
+jinja2
+sqlalchemy
+waitress
+pyramid_tm
+pyramid_debugtoolbar
+zope.sqlalchemy
+transaction
+psycopg2
