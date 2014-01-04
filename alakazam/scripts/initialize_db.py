@@ -35,6 +35,7 @@ def main(argv=sys.argv):
         engine = engine_from_config(settings, 'sqlalchemy.')
     DBSession.configure(bind=engine)
     Base.metadata.create_all(engine)
-    with transaction.manager:
-        user_model = User('brendanwjw@msn.com', 'password123')
-        DBSession.add(user_model)
+    # NOTE: Used for Testing Model (Remove Me)
+    #with transaction.manager:
+    #    user_model = User('brendanwjw@msn.com', 'password123')
+    #    DBSession.add(user_model)
