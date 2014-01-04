@@ -1,0 +1,10 @@
+{% extends "_layout.jinja2" %}
+{% block title %}Beyond your resume and into your World{% endblock %}
+{% block content %}
+    {% include 'lnav.jinja2' %}
+    <h1>{{User.username}}</h1>
+    <h1>{{User.name}}</h1>
+    <h1>{{User.location}}</h1>
+    <h1>{{User.password}}</h1>
+{% endblock %}
+

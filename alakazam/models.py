@@ -18,7 +18,7 @@ class User(Base):
     """
     __tablename__ = 'User'
     # Auto Fields
-    user_id = Column(Integer, primary_key=True)
+    id_ = Column(Integer, primary_key=True)
     # Required Fields
     name = Column(Text)
     username = Column(Text, unique=True)
@@ -37,6 +37,14 @@ class User(Base):
         self.password = self._encrypt_password(password)
         self.location = location
         self.field = field
+
+    @classmethod
+    def by_id(cls, user_id):
+        """
+        Docstring goes here
+
+        """
+        return DBSession.query(User).filter(User.id_==user_id).first()
 
     def validate_password(self, password):
         """

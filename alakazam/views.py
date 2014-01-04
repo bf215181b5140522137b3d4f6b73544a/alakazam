@@ -4,6 +4,7 @@ import transaction
 # 3rd Party
 from pyramid.view import view_config
 from pyramid.i18n import TranslationStringFactory
+from pyramid.httpexceptions import HTTPFound, HTTPNotFound
 
 # Local
 from alakazam.models import DBSession, User
@@ -20,6 +21,15 @@ def home_view(request):
     #Use session to make queries
     #session.query()
     return {'project': 'Alakazam'}
+
+@view_config(route_name='profile', renderer='templates/profile.jinja2')
+def profile_view(request):
+    """
+    Docstring goes here
+
+    """
+    user = User.by_id(request.matchdict['id_'])
+    return {'User': user }
 
 @view_config(route_name='register', renderer='templates/register.jinja2')
 def register_view(request):
@@ -43,7 +53,11 @@ def register_view(request):
         #field = request.params['field']
         # Create the new User
         with transaction.manager:
-            DBSession.add(User(name, email, password, location, field))
+            user = User(name, email, password, location, field)
+            DBSession.add(user)
+            DBSession.flush()
+            return HTTPFound(location=request.route_url('profile', 
+                                                        id_=user.id_))
     # Return 
     return {'url': request.application_url + '/register',
             'came_from': came_from,
@@ -51,4 +65,3 @@ def register_view(request):
             'email': email,
             'location': location,
             'field': 'FIXME: Field Goes Here!!!!!!'}
-
