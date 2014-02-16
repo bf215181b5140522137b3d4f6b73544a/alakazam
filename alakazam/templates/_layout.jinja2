@@ -10,7 +10,7 @@
         <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
         <title>{% block title %}{% endblock %}</title>
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{{request.application_url}}/static/css/bootstrap.css"/>
+        <link rel="stylesheet" href="{{request.application_url}}/static/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="{{request.application_url}}/static/css/alakazam.css"/>
         <!-- Google Fonts -->
         <link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
@@ -45,9 +45,13 @@
             </div>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
         <!-- Include all compiled plugins (below) -->
         <script src="{{request.application_url}}/static/js/bootstrap.min.js"></script>
+        <!-- jqBootstrap Validation -->
+        <script src="{{request.application_url}}/static/js/jqBootstrapValidation.js"></script>
+        <script>$(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );</script>
         <script src="{{request.application_url}}/static/js/alakazam.js"></script>
     </body>
 </html>

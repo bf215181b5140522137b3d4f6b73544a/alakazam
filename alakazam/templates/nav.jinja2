@@ -28,25 +28,24 @@
 <div class="modal fade" id="login" role="dialog">
     <div class="modal-dialog cream-dust">
         <div class="modal-content">
-            <form role="form">
+            <form role="form" novalidate action={{url}} method="post">
                 <div class="modal-header">
                     <a class="close" data-dismiss="modal">&times;</a>
                     <h3>Sign In to ResumeX</h3>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" class="form-control input-lg" id="email" placeholder="Email">
+                        <input required data-validation-required-message="Please enter your email." type="email" class="form-control input-lg" id="email" name="email" placeholder="Email">
+                        <p class="help-block"></p>
                     </div>
                     <div class="form-group">
-                        <label for="passw0rd">Password</label>
                         <input type="password" class="form-control input-lg" id="passw0rd" placeholder="Password">
                         <br />
                         <a href="#">Forgot your password?</a>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-block">Sign In</button>
+                    <button type="button" class="btn btn-primary btn-block" action="submit" name="commit">Sign In</button>
                 </div>
             </form>
         </div>

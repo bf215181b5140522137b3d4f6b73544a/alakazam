@@ -38,6 +38,8 @@ def main(global_config, **settings):
     initialize_sql(engine)
     config = Configurator(settings=settings)
     config.include('pyramid_jinja2')
+    config.include('velruse.providers.linkedin')
+    config.add_linkedin_login_from_settings(prefix='velruse.linkedin.')
     #The views/routes are added here
     config.add_static_view('static', 'static')
     # Add routes

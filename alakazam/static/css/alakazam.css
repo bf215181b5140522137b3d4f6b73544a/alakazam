@@ -8,7 +8,7 @@
 html,
 body {
     height: 100%;
-    background: url(../images/grey.png) repeat 0 0;
+    background: url(../images/cream.png) repeat 0 0;
 }
 
 p, div {
@@ -58,7 +58,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Set the fixed height of the footer here */
 #footer {
     height: 60px;
-    padding-top: 100px;
 }
 
 .footer-copyright {

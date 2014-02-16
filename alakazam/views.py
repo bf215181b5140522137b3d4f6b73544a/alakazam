@@ -5,6 +5,7 @@ import transaction
 from pyramid.view import view_config
 from pyramid.i18n import TranslationStringFactory
 from pyramid.httpexceptions import HTTPFound, HTTPNotFound
+from velruse import login_url
 
 # Local
 from alakazam.models import DBSession, User
@@ -64,4 +65,5 @@ def register_view(request):
             'name': name,
             'email': email,
             'location': location,
-            'field': 'FIXME: Field Goes Here!!!!!!'}
+            'field': 'FIXME: Field Goes Here!!!!!!',
+            'login_url': login_url}
